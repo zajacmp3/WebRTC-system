@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>WebRTC Test</title>
+		<script>
+			var constraints = {video: true};
+			
+			function successCallback(stream) {
+				var video = document.querySelector("video");
+				video.src = window.URL.createObjectURL(stream);
+			}
+			
+			function errorCallback(error){
+				console.log("navigator.getUserMedia error: ", error);
+			}
+			
+			navigator.getMedia = ( navigator.getUserMedia ||
+                    navigator.webkitGetUserMedia ||
+                    navigator.mozGetUserMedia ||
+                    navigator.msGetUserMedia);
+			
+			navigator.getMedia(constraints, successCallback, errorCallback);
+		</script>
+	</head>
+	<body>
+		<video width="320" height="240" controls>
+		  <source src="" type="video/mp4">
+		Your browser does not support the video tag.
+		</video> 
+	</body>
+</html>
