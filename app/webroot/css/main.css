@@ -1,0 +1,14 @@
+body {
+	background-image: url('../img/main_background.png');
+	background-repeat: repeat;
+}
+
+.content {
+	margin: 0 auto;
+}
+
+.video {
+	margin: 0 auto;
+	padding: 15% 0 0;
+	width: 320px;
+}
